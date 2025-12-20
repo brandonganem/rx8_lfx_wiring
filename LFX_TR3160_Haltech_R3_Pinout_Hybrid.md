@@ -22,7 +22,7 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | A15 | DPO 4 | VVT Bank 1 Intake | **Was Unused** | **Add Wire** |
 | A16 | DPO 5 | VVT Bank 1 Exhaust | **Was VTEC** | **Repurpose Wire** |
 | A17 | DPO 6 | VVT Bank 2 Intake | **Was VTC** | **Repurpose Wire** |
-| A18 | HBO 5 | Unused / Aux | Was Harness +12V | Check if needed |
+| A18 | HBO 5 | Starter Relay | **Was Harness +12V** | **Repurpose (High Side)** |
 | A19 | HBO 1 | DBW Motor + | Existing | None |
 | A20 | HBO 2 | DBW Motor - | Existing | None |
 | A21 | HBO 3 | VVT Bank 2 Exhaust | **Was VTC Power** | **Repurpose (Set as Low Side)** |
@@ -94,3 +94,4 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 5.  **Sensors:** Moved Oil Pressure to AVI 4 (C13) and Flex Fuel to SPI 6 (C20).
 6.  **Reverse:** Moved Reverse Switch Input to AVI 11 (C28).
 7.  **Power:** Repurposed Water Pump and Starter power feeds for Coils and Injectors.
+8.  **Starter:** Added Starter Relay control on HBO 5 (A18).

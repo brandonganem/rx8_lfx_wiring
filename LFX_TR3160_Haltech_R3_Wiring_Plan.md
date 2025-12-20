@@ -130,8 +130,18 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
 | **Fuel Pump** | `HCO 1` | Direct 12V power to pump (up to 25A). Ground pump to chassis. |
 | **Cooling Fan** | `HCO 2` | Direct 12V power to fan (up to 25A). Ground fan to chassis. |
 
-### 10. Summary of Remaining I/O
-*   **Outputs:** `IGN 7-8` (Unused), `INJ 7-8` (Unused), `HBO 3-6` (Available for Boost Control, Fans, etc.), `DPO 6` (Available).
+### 10. Starting System
+*   **Starter Relay:** External relay required (HCOs are full).
+*   **Trigger:** `HBO 5` (High Side Output - +12V).
+*   **Wiring:**
+    *   **86 (Coil +):** To Haltech `HBO 5` (A18).
+    *   **85 (Coil -):** To Chassis Ground.
+    *   **30 (Common):** Battery 12V (High Current).
+    *   **87 (NO):** To Starter Solenoid.
+*   **Note:** This High Side configuration is safer. If the wire to the relay shorts to ground, the fuse trips rather than the starter cranking unexpectedly.
+
+### 11. Summary of Remaining I/O
+*   **Outputs:** `IGN 7-8` (Unused), `INJ 7-8` (Unused), `HBO 6` (Available), `DPO 6` (Available).
 *   **Inputs:** `AVI 10-11` (Available), `SPI 6` (Available for Flex Fuel).
 
 ## Notes
