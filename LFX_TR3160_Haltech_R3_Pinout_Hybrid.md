@@ -11,8 +11,8 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | A04 | INJ 4 | Cylinder 4 Injector | Existing | None |
 | A05 | INJ 5 | Cylinder 5 Injector | **Was Killswitch** | **Repin / New Wire** |
 | A06 | INJ 6 | Cylinder 6 Injector | **Was Unused** | **Add Wire** |
-| A07 | INJ 7 | Unused | | |
-| A08 | INJ 8 | Unused | | |
+| A07 | INJ 7 | Kill Switch Input | **Unused** | **Digital Input** |
+| A08 | INJ 8 | Spare Connector Pin 1 | **Unused** | **Aux Out / Switch In** |
 | A09 | DPO 1 | Brake Pedal Switch | Existing | None |
 | A10 | GND | Battery Ground Out | Existing | None |
 | A11 | GND | Battery Ground Out | Existing | None |
@@ -26,10 +26,10 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | A19 | HBO 1 | DBW Motor + | Existing | None |
 | A20 | HBO 2 | DBW Motor - | Existing | None |
 | A21 | HBO 3 | VVT Bank 2 Exhaust | **Was VTC Power** | **Repurpose (Set as Low Side)** |
-| A22 | HBO 4 | Unused | **Was IGN Power** | **Available** |
+| A22 | HBO 4 | Spare Connector Pin 2 | **Was IGN Power** | **Available** |
 | A23 | CAN 1 H | RX8 CAN High | Existing | None |
 | A24 | CAN 1 L | RX8 CAN Low | Existing | None |
-| A25 | HBO 6 | Unused | Was INJ Power | |
+| A25 | HBO 6 | Spare Connector Pin 3 | Was INJ Power | |
 | A26 | +12V | 12V Low Current Out | Existing | None |
 | A27 | IGN 1 | Cylinder 1 Coil | Existing | None |
 | A28 | IGN 2 | Cylinder 2 Coil | Existing | None |
@@ -50,8 +50,8 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | C05 | SPI 1 | Cam 2 (Bank 1 Exhaust)| **Was Int Cam** | **Repurpose** |
 | C06 | SPI 2 | Cam 3 (Bank 2 Intake) | **Was Oil Press** | **Repin (Move Oil Press)** |
 | C07 | SPI 3 | Cam 4 (Bank 2 Exhaust)| **Was Flex Fuel** | **Repin (Move Flex)** |
-| C08 | SPI 4 | VSS (Speed Sensor) | **Was Neutral Sw** | **Repurpose** |
-| C09 | +8V | Sensor 8V | Existing | None |
+| C08 | SPI 4 | Flex Fuel | **Was Neutral Sw** | **Repurpose (Use CAN Speed)** |
+| C09 | +8V | Unused | Existing | **Cap / Depin** |
 | C10 | AVI 1 | MAP Sensor | Existing | **Keep External MAP** |
 | C11 | AVI 2 | Combo Oil Temp | Existing | None |
 | C12 | AVI 3 | IAT | Existing | None |

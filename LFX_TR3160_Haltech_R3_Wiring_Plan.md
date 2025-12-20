@@ -126,7 +126,7 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
 | :--- | :--- | :--- |
 | **Reverse Lockout** | `IGN 8` (Low Side) | Solenoid to allow Reverse gear. Active < 5mph. |
 | **Reverse Switch** | `IGN 7` (Digital Input) | Input from Trans. Used for Lockout logic & CAN. |
-| **VSS** (Speed) | `SPI 4` | Vehicle Speed Sensor (VR or Hall). |
+| **VSS** (Speed) | **CAN Bus** | Use RX8 Wheel Speed Sensors via CAN. |
 
 ### 9. Accessories (Fuel Pump & Fan)
 | Component | Haltech Connection | Notes |
@@ -144,9 +144,18 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
     *   **87 (NO):** To Starter Solenoid.
 *   **Note:** This High Side configuration is safer. If the wire to the relay shorts to ground, the fuse trips rather than the starter cranking unexpectedly.
 
-### 11. Summary of Remaining I/O
-*   **Outputs:** `INJ 7-8` (Unused), `HBO 4` (Available), `HBO 6` (Available).
-*   **Inputs:** None (All AVIs and SPIs used). `DPO 1` & `DPO 2` used as Brake/Clutch Inputs.
+### 12. Spare / Expansion Connector (6-Pin DTM)
+This connector bundles all remaining I/O for future upgrades.
+*   **Pin 1:** `INJ 8` (Aux Output / Switch Input)
+*   **Pin 2:** `HBO 4` (High Current Aux Output)
+*   **Pin 3:** `HBO 6` (High Current Aux Output)
+*   **Pin 4:** +12V (Low Current - From Pin A26)
+*   **Pin 5:** +5V Reference (Splice)
+*   **Pin 6:** Signal Ground (Splice)
+
+### 13. Summary of Remaining I/O
+*   **Outputs:** None (All assigned to Spare Connector).
+*   **Inputs:** `INJ 7` used for Kill Switch. All others used.
 
 ## Notes
 *   **Grounding:** Ensure the Cylinder Heads and ECU Ground are referenced to the same point (Star Ground on Block/Battery).
