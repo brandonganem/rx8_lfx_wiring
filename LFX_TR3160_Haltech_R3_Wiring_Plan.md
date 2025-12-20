@@ -78,10 +78,10 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
 
 | Solenoid | Haltech Output | Function |
 | :--- | :--- | :--- |
-| **Bank 1 Intake** | `DPO 1` (or `LSO 1`) | PWM Control (Low Side) |
-| **Bank 1 Exhaust**| `DPO 2` (or `LSO 2`) | PWM Control (Low Side) |
-| **Bank 2 Intake** | `DPO 3` (or `LSO 3`) | PWM Control (Low Side) |
-| **Bank 2 Exhaust**| `DPO 4` (or `LSO 4`) | PWM Control (Low Side) |
+| **Bank 1 Intake** | `DPO 4` | PWM Control (Low Side) |
+| **Bank 1 Exhaust**| `DPO 5` | PWM Control (Low Side) |
+| **Bank 2 Intake** | `DPO 6` | PWM Control (Low Side) |
+| **Bank 2 Exhaust**| `HBO 3` | PWM Control (Low Side) |
 
 ### 6. Drive By Wire (Electronic Throttle)
 *   **Throttle Body:** 6-pin connector.
@@ -108,13 +108,15 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
 ### 7. Sensors
 | Sensor | Haltech Input | Notes |
 | :--- | :--- | :--- |
-| **MAP** | `AVI 1` (or Onboard) | |
-| **Oil Temp** | `AVI 2` | |
+| **MAP** | `AVI 1` | External MAP Sensor |
+| **Coolant Pressure** | `SPI 6` | Head Gasket Safety Monitor (0-5V) |
+| **Combo Oil Temp** | `AVI 2` | Aftermarket Combo Sensor |
 | **IAT** (Air Temp) | `AVI 3` | |
-| **Oil Pressure** | `AVI 4` | |
+| **Stock Oil Pressure** | `AVI 4` | Factory LFX Sensor |
 | **ECT** (Coolant) | `AVI 9` | |
 | **Fuel Pressure** | `AVI 10` | Important for safety |
-| **Trans Temp** | `SPI 5` | TR-3160 Temp Sensor |
+| **Trans Temp** | `AVI 11` | TR-3160 Temp Sensor |
+| **Combo Oil Pressure** | `SPI 5` | Aftermarket Combo Sensor (0-5V) |
 | **Knock 1** (Bank 1) | `Knock 1` | |
 | **Knock 2** (Bank 2) | `Knock 2` | |
 | **Wideband O2** | Onboard WB1 | Connect LSU 4.9 or NTK sensor directly |
@@ -122,9 +124,9 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
 ### 8. Transmission (TR-3160)
 | Component | Haltech Connection | Notes |
 | :--- | :--- | :--- |
-| **Reverse Lockout** | `DPO 5` (Low Side) | Solenoid to allow Reverse gear. Active < 5mph. |
-| **Reverse Switch** | `AVI 9` (or Digital) | Input to turn on reverse lights/camera. |
-| **VSS** (Speed) | `SPI 5` | Vehicle Speed Sensor (VR or Hall). |
+| **Reverse Lockout** | `IGN 8` (Low Side) | Solenoid to allow Reverse gear. Active < 5mph. |
+| **Reverse Switch** | `IGN 7` (Digital Input) | Input from Trans. Used for Lockout logic & CAN. |
+| **VSS** (Speed) | `SPI 4` | Vehicle Speed Sensor (VR or Hall). |
 
 ### 9. Accessories (Fuel Pump & Fan)
 | Component | Haltech Connection | Notes |
@@ -143,8 +145,8 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
 *   **Note:** This High Side configuration is safer. If the wire to the relay shorts to ground, the fuse trips rather than the starter cranking unexpectedly.
 
 ### 11. Summary of Remaining I/O
-*   **Outputs:** `IGN 7-8` (Unused), `INJ 7-8` (Unused), `HBO 6` (Available), `DPO 6` (Available).
-*   **Inputs:** `AVI 10-11` (Available), `SPI 6` (Available for Flex Fuel).
+*   **Outputs:** `INJ 7-8` (Unused), `HBO 4` (Available), `HBO 6` (Available).
+*   **Inputs:** None (All AVIs and SPIs used). `DPO 1` & `DPO 2` used as Brake/Clutch Inputs.
 
 ## Notes
 *   **Grounding:** Ensure the Cylinder Heads and ECU Ground are referenced to the same point (Star Ground on Block/Battery).

@@ -26,7 +26,7 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | A19 | HBO 1 | DBW Motor + | Existing | None |
 | A20 | HBO 2 | DBW Motor - | Existing | None |
 | A21 | HBO 3 | VVT Bank 2 Exhaust | **Was VTC Power** | **Repurpose (Set as Low Side)** |
-| A22 | HBO 4 | Reverse Lockout | **Was IGN Power** | **Repurpose (Set as Low Side)** |
+| A22 | HBO 4 | Unused | **Was IGN Power** | **Available** |
 | A23 | CAN 1 H | RX8 CAN High | Existing | None |
 | A24 | CAN 1 L | RX8 CAN Low | Existing | None |
 | A25 | HBO 6 | Unused | Was INJ Power | |
@@ -37,8 +37,8 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | A30 | IGN 4 | Cylinder 4 Coil | Existing | None |
 | A31 | IGN 5 | Cylinder 5 Coil | **Was Rev Switch** | **Repin / New Wire** |
 | A32 | IGN 6 | Cylinder 6 Coil | **Was Unused** | **Add Wire** |
-| A33 | IGN 7 | Unused | | |
-| A34 | IGN 8 | Unused | | |
+| A33 | IGN 7 | Reverse Switch Input | **Was Unused** | **Digital Input (0-12V)** |
+| A34 | IGN 8 | Reverse Lockout | **Was Unused** | **Low Side Output (Solenoid)** |
 
 ## Connector C (34 Pin)
 | Pin | Function | Description | K24 Harness Wire | Changes Required |
@@ -52,17 +52,17 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | C07 | SPI 3 | Cam 4 (Bank 2 Exhaust)| **Was Flex Fuel** | **Repin (Move Flex)** |
 | C08 | SPI 4 | VSS (Speed Sensor) | **Was Neutral Sw** | **Repurpose** |
 | C09 | +8V | Sensor 8V | Existing | None |
-| C10 | AVI 1 | MAP Sensor | Existing | None (If using ext MAP) |
-| C11 | AVI 2 | Oil Temp | Existing | None |
+| C10 | AVI 1 | MAP Sensor | Existing | **Keep External MAP** |
+| C11 | AVI 2 | Combo Oil Temp | Existing | None |
 | C12 | AVI 3 | IAT | Existing | None |
-| C13 | AVI 4 | Oil Pressure | **Was Spare 2** | **Move Oil Press Here** |
+| C13 | AVI 4 | Oil Pressure (Stock) | **Was Spare 2** | **Move Oil Press Here** |
 | C14 | AVI 5 | TPS 1 (Throttle) | Existing | None |
 | C15 | AVI 6 | TPS 2 (Throttle) | Existing | None |
 | C16 | AVI 7 | Pedal Pos 1 | Existing | None |
 | C17 | AVI 8 | Pedal Pos 2 | Existing | None |
 | C18 | AVI 9 | ECT (Coolant) | Existing | None |
-| C19 | SPI 5 | Trans Temp | **Was Trans Temp** | **Keep Existing** |
-| C20 | SPI 6 | Flex Fuel | **Was Unused** | **Move Flex Here** |
+| C19 | SPI 5 | Combo Oil Pressure | **Was Trans Temp** | **Repurpose (0-5V)** |
+| C20 | SPI 6 | Coolant Pressure | **Was Unused** | **Add Sensor (0-5V)** |
 | C21 | CAN 2 H | Haltech CAN | Existing | None |
 | C22 | CAN 2 L | Haltech CAN | Existing | None |
 | C23 | Knock 1 | Knock Bank 1 | Existing | None |
@@ -70,7 +70,7 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | C25 | +5V | Sensor +5V | Existing | None |
 | C26 | Sig Gnd | Signal Ground | Existing | None |
 | C27 | AVI 10 | Fuel Pressure | Existing | None |
-| C28 | AVI 11 | Reverse Switch Input | **Was ??** | **Move Rev Switch Here** |
+| C28 | AVI 11 | Trans Temp | **Was Rev Switch** | **Move Trans Temp Here** |
 | C29 | WB1 H+ | Wideband | Existing | None |
 | C30 | WB1 Ip | Wideband | Existing | None |
 | C31 | WB1 Vs | Wideband | Existing | None |
@@ -92,6 +92,10 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 3.  **VVT:** Repurposed VTEC/VTC wires and added new ones for 4x Solenoids.
 4.  **Cams:** Took over SPI 2 & 3 (Oil Press/Flex) for Cam sensors.
 5.  **Sensors:** Moved Oil Pressure to AVI 4 (C13) and Flex Fuel to SPI 6 (C20).
-6.  **Reverse:** Moved Reverse Switch Input to AVI 11 (C28).
-7.  **Power:** Repurposed Water Pump and Starter power feeds for Coils and Injectors.
-8.  **Starter:** Added Starter Relay control on HBO 5 (A18).
+6.  **Reverse:** Assigned Reverse Switch Input to IGN 7 (A33).
+7.  **Trans Temp:** Moved to AVI 11 (C28) for proper pull-up support.
+8.  **Combo Sensor:** Added Aftermarket Oil Pressure to SPI 5 (C19) and Oil Temp to AVI 2 (C11).
+9.  **Power:** Repurposed Water Pump and Starter power feeds for Coils and Injectors.
+10. **Starter:** Added Starter Relay control on HBO 5 (A18).
+11. **Coolant Pressure:** Added Coolant Pressure Sensor to SPI 6 (C20).
+12. **Flex Fuel:** Removed Flex Fuel (SPI 6 taken).
