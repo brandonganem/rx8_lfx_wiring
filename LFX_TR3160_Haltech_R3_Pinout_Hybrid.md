@@ -98,4 +98,6 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 9.  **Power:** Repurposed Water Pump and Starter power feeds for Coils and Injectors.
 10. **Starter:** Added Starter Relay control on HBO 5 (A18).
 11. **Coolant Pressure:** Added Coolant Pressure Sensor to SPI 6 (C20).
-12. **Flex Fuel:** Removed Flex Fuel (SPI 6 taken).
+12. **Flex Fuel:** Moved to SPI 4 (C08) as VSS is now CAN-based.
+13. **Kill Switch:** Added Kill Switch Input to INJ 7 (A07).
+14. **Spare Connector:** Created 6-Pin DTM with INJ 8, HBO 4, HBO 6, 12V, 5V, Gnd.

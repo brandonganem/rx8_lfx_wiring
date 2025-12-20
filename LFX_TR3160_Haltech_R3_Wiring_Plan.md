@@ -19,16 +19,16 @@ This plan uses the standard Haltech nomenclature (e.g., `INJ1`, `SPI1`). Refer t
 
 ### 1. Power Distribution (PDM)
 The Nexus R3 has onboard PDM capabilities (HCO - High Current Outputs).
-*   **HCO 1 (25A):** Fuel Pump.
+*   **HCO 1 (25A):** Ignition Coils Power (12V supply to all 6 coils).
 *   **HCO 2 (25A):** Cooling Fan.
-*   **HCO 3 (25A):** Ignition Coils Power (12V supply to all 6 coils).
-*   **HCO 4 (25A):** Injectors + VVT Solenoids Power.
+*   **HCO 3 (25A):** Injectors + VVT Solenoids Power.
+*   **HCO 4 (25A):** Fuel Pump.
 
 ### 2. Ignition System (Coils)
 The LFX uses 6 individual coils.
 *   **Type:** Logic Level (Smart Coils).
 *   **Wiring:**
-    *   **12V:** From `HCO 3`.
+    *   **12V:** From `HCO 1`.
     *   **Ground:** Cylinder Head / Battery Negative.
     *   **Signal Ground:** Sensor Ground (optional but recommended) or Battery Negative.
     *   **Trigger:** Connect to Haltech `IGN` outputs.
@@ -45,7 +45,7 @@ The LFX uses 6 individual coils.
 ### 3. Fuel System (Port Injection Retrofit)
 *   **Type:** High Impedance Injectors (Saturation).
 *   **Wiring:**
-    *   **12V:** From `HCO 4`.
+    *   **12V:** From `HCO 3`.
     *   **Trigger:** Connect to Haltech `INJ` outputs (switched ground).
 
 | Cylinder | Haltech Output |
@@ -74,7 +74,7 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
 
 ### 5. Variable Valve Timing (VVT Solenoids)
 4 Solenoids control the oil flow to the phasers.
-*   **Wiring:** 2-wire. One side to 12V (`HCO 4`), other side to ECU Low Side Output.
+*   **Wiring:** 2-wire. One side to 12V (`HCO 3`), other side to ECU Low Side Output.
 
 | Solenoid | Haltech Output | Function |
 | :--- | :--- | :--- |
@@ -131,7 +131,7 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
 ### 9. Accessories (Fuel Pump & Fan)
 | Component | Haltech Connection | Notes |
 | :--- | :--- | :--- |
-| **Fuel Pump** | `HCO 1` | Direct 12V power to pump (up to 25A). Ground pump to chassis. |
+| **Fuel Pump** | `HCO 4` | Direct 12V power to pump (up to 25A). Ground pump to chassis. |
 | **Cooling Fan** | `HCO 2` | Direct 12V power to fan (up to 25A). Ground fan to chassis. |
 
 ### 10. Starting System
