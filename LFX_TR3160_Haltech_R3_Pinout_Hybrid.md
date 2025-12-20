@@ -4,8 +4,9 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 
 ## Wiring Standards
 *   **Wire Type:** TXL Automotive Wire (Thin Wall Cross-Linked Polyethylene).
-*   **Wire Colors:** Colors listed below are standard aftermarket/Haltech conventions for the *ECU side* of the harness.
-    *   **Note:** When splicing into the GM LFX engine harness, match the function to the OE pigtail. The OE wire colors may differ.
+*   **Wire Colors:** Colors listed below are standard aftermarket/Haltech conventions for the *ECU side* of the harness (the new wires you are running).
+    *   **IMPORTANT:** You are splicing into an OE GM Engine Harness. The wire colors on the **GM Pigtails** will likely **NOT MATCH** the colors listed below.
+    *   **Action:** Always match the **Pin Position** on the GM connector, not the color.
 *   **Wire Sizes:**
     *   **Power (High Current):** 12-14 AWG (HCOs).
     *   **Power (Med Current):** 16-18 AWG (DBW, Solenoids).
