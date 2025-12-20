@@ -61,7 +61,7 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | C16 | AVI 7 | Pedal Pos 1 | Existing | None |
 | C17 | AVI 8 | Pedal Pos 2 | Existing | None |
 | C18 | AVI 9 | ECT (Coolant) | Existing | None |
-| C19 | SPI 5 | Trans Temp (or Spare) | Existing | None |
+| C19 | SPI 5 | Trans Temp | **Was Trans Temp** | **Keep Existing** |
 | C20 | SPI 6 | Flex Fuel | **Was Unused** | **Move Flex Here** |
 | C21 | CAN 2 H | Haltech CAN | Existing | None |
 | C22 | CAN 2 L | Haltech CAN | Existing | None |

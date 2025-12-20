@@ -92,27 +92,29 @@ The LFX has 4 Cam sensors and 1 Crank sensor.
 | :--- | :--- |
 | Motor + | `HBO 1` (Half Bridge 1) |
 | Motor - | `HBO 2` (Half Bridge 2) |
-| TPS 1 Signal | `AVI 1` |
-| TPS 2 Signal | `AVI 2` |
+| TPS 1 Signal | `AVI 5` |
+| TPS 2 Signal | `AVI 6` |
 | 5V Ref | 5V Output |
 | Signal Ground | Signal Ground |
 
 **Accelerator Pedal (APP):**
 | Pin Function | Haltech Connection |
 | :--- | :--- |
-| APP 1 Signal | `AVI 3` |
-| APP 2 Signal | `AVI 4` |
+| APP 1 Signal | `AVI 7` |
+| APP 2 Signal | `AVI 8` |
 | 5V Ref | 5V Output |
 | Signal Ground | Signal Ground |
 
 ### 7. Sensors
 | Sensor | Haltech Input | Notes |
 | :--- | :--- | :--- |
-| **MAP** | Onboard | Run vacuum line to ECU |
-| **IAT** (Air Temp) | `AVI 5` | GM IAT usually in MAF or separate |
-| **CLT** (Coolant) | `AVI 6` | |
-| **Oil Pressure** | `AVI 7` | |
-| **Fuel Pressure** | `AVI 8` | Important for safety |
+| **MAP** | `AVI 1` (or Onboard) | |
+| **Oil Temp** | `AVI 2` | |
+| **IAT** (Air Temp) | `AVI 3` | |
+| **Oil Pressure** | `AVI 4` | |
+| **ECT** (Coolant) | `AVI 9` | |
+| **Fuel Pressure** | `AVI 10` | Important for safety |
+| **Trans Temp** | `SPI 5` | TR-3160 Temp Sensor |
 | **Knock 1** (Bank 1) | `Knock 1` | |
 | **Knock 2** (Bank 2) | `Knock 2` | |
 | **Wideband O2** | Onboard WB1 | Connect LSU 4.9 or NTK sensor directly |
