@@ -36,8 +36,8 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | A18 | HBO 5 | Starter Relay | 18 AWG | Gray / Red | **Was Harness +12V** | **Repurpose (High Side)** |
 | A19 | HBO 1 | DBW Motor + | 18 AWG | Orange / Red | Existing | None |
 | A20 | HBO 2 | DBW Motor - | 18 AWG | Orange / Blue | Existing | None |
-| A21 | HBO 3 | VVT Bank 2 Exhaust | 20 AWG | Gray / Yellow | **Was VTC Power** | **Repurpose (Set as Low Side)** |
-| A22 | HBO 4 | Spare Connector Pin 2 | 18 AWG | Gray / Green | **Was IGN Power** | **Available** |
+| A21 | HBO 3 | Spare (High Current) | 18 AWG | Gray / Yellow | **Was VTC Power** | **Available** |
+| A22 | HBO 4 | Spare (High Current) | 18 AWG | Gray / Green | **Was IGN Power** | **Available** |
 | A23 | CAN 1 H | RX8 CAN High | 22 AWG (Twisted) | Yellow | Existing | None |
 | A24 | CAN 1 L | RX8 CAN Low | 22 AWG (Twisted) | Green | Existing | None |
 | A25 | HBO 6 | Spare Connector Pin 3 | 18 AWG | Gray / Black | Was INJ Power | |
@@ -49,7 +49,7 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 | A31 | IGN 5 | Cylinder 5 Coil | 20 AWG | Yellow / Black | **Was Rev Switch** | **Repin / New Wire** |
 | A32 | IGN 6 | Cylinder 6 Coil | 20 AWG | Yellow / Purple | **Was Unused** | **Add Wire** |
 | A33 | IGN 7 | Reverse Switch Input | 20 AWG | Yellow / Blue | **Was Unused** | **Digital Input (0-12V)** |
-| A34 | IGN 8 | Reverse Lockout | 20 AWG | Yellow / White | **Was Unused** | **Low Side Output (Solenoid)** |
+| A34 | IGN 8 | VVT Bank 2 Exhaust | 20 AWG | Yellow / White | **Was Unused** | **Configure as Low Side PWM** |
 
 ## Connector C (34 Pin)
 | Pin | Function | Description | Wire Size (TXL) | Wire Color (Ref) | K24 Harness Wire | Changes Required |
@@ -92,15 +92,15 @@ This pinout is designed to reuse as much of the existing K24 RX8 wiring harness 
 ## Connector E (4 Pin - High Current)
 | Pin | Function | Description | Wire Size (TXL) | Wire Color (Ref) | K24 Harness Wire | Changes Required |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| E01 | HCO 1 | Ignition Coils Power | 12 AWG | Red / Blue | **Was Water Pump** | **Repurpose** |
+| E01 | HCO 1 | PDM Trigger (Coils) | 20 AWG | Red / Blue | **Was Water Pump** | **Triggers PDM Channel** |
 | E02 | HCO 2 | Cooling Fan | 12 AWG | Red / Green | Existing | None |
 | E03 | HCO 3 | Injectors + VVT Power | 14 AWG | Red / Yellow | **Was Starter** | **Repurpose** |
 | E04 | HCO 4 | Fuel Pump | 12 AWG | Red / Orange | Existing | None |
 
 ## Summary of Major Moves
 1.  **Injectors:** Added Inj 5 & 6 (A05, A06).
-2.  **Coils:** Added Ign 5 & 6 (A31, A32).
-3.  **VVT:** Repurposed VTEC/VTC wires and added new ones for 4x Solenoids.
+2.  **Coils:** Added Ign 5 & 6 (A31, A32). **Power from PDM** (HCO 1 triggers PDM).
+3.  **VVT:** DPO 4-6 for 3 solenoids, **IGN 8** for VVT B2 Exhaust (configured as Low Side PWM).
 4.  **Cams:** Took over SPI 2 & 3 (Oil Press/Flex) for Cam sensors.
 5.  **Sensors:** Moved Oil Pressure to AVI 4 (C13) and Flex Fuel to SPI 6 (C20).
 6.  **Reverse:** Assigned Reverse Switch Input to IGN 7 (A33).
